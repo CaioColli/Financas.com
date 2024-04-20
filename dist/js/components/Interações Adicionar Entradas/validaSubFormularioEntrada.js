@@ -1,0 +1,21 @@
+const formularioEntrada = document.querySelector('#card_addEntrada');
+const titulo = formularioEntrada.querySelector('#input_titulo');
+const valor = formularioEntrada.querySelector('#input_valor');
+const data = formularioEntrada.querySelector('#input_data');
+export function verificaEntrada() {
+    const btnSubFormulario = document.querySelector('#btn_enviar_formulario_entrada');
+    const dataValida = data.value.split('/').reverse().join('-');
+    const dataConvertida = new Date(dataValida);
+    const anoValido = dataConvertida.getFullYear().toString().length === 4;
+    if (titulo.value === '' || valor.value === '' || valor.value === 'R$ NaN' || data.value === '' || !anoValido || isNaN(dataConvertida.getTime())) {
+        btnSubFormulario.style.display = 'none';
+    }
+    else {
+        btnSubFormulario.style.display = 'block';
+    }
+}
+export function verificaInputsEntrada() {
+    titulo.addEventListener('input', verificaEntrada);
+    valor.addEventListener('input', verificaEntrada);
+    data.addEventListener('input', verificaEntrada);
+}
