@@ -17,8 +17,13 @@ export function funcBtnEditarEntradas() {
     const btnEditar = cardEntrada.querySelector('#icone_editarEntrada');
     editar(btnEditar, cardEntrada);
     btnEditar.addEventListener('click', () => {
-        click = true;
-        checkClickLixeira();
+        click = !click;
+        if (click) {
+            checkClickLixeira();
+        }
+        else {
+            checkClick();
+        }
     });
 }
 export function validaCliqueEntrada() {

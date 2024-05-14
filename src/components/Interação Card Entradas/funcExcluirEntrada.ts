@@ -23,9 +23,15 @@ export function funcBtnEditarEntradas() {
     editar(btnEditar, cardEntrada)
 
     btnEditar.addEventListener('click', () => {
-        click = true
-        checkClickLixeira()
+        click = !click
+        if(click) {
+            checkClickLixeira()
+        } else {
+            checkClick()
+        }
     })
+
+    
 }
 
 export function validaCliqueEntrada() {

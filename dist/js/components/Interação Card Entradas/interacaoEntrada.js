@@ -2,6 +2,7 @@ const btnFiltrar = document.querySelector('#filtrar_entrada');
 const cabecalhoCardEntrada = document.querySelector('.cabecalho_card_entradas');
 const filtrosCardEntrada = document.querySelector('.filtros_card_entradas');
 const btnFecharFiltros = document.querySelector('#icone_fecharFiltros_entrada');
+btnFiltrar.style.display = 'none';
 export function interacaoFiltrarEntrada() {
     btnFiltrar.addEventListener('click', () => {
         cabecalhoCardEntrada.style.display = 'none';

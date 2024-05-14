@@ -3,6 +3,8 @@ const cabecalhoCardEntrada = document.querySelector('.cabecalho_card_entradas') 
 const filtrosCardEntrada = document.querySelector('.filtros_card_entradas') as HTMLDivElement
 const btnFecharFiltros = document.querySelector('#icone_fecharFiltros_entrada') as HTMLButtonElement
 
+btnFiltrar.style.display = 'none'
+
 export function interacaoFiltrarEntrada() {
     btnFiltrar.addEventListener('click', () => {
         cabecalhoCardEntrada.style.display = 'none'
